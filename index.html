@@ -43,235 +43,295 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .gold-border { border-color: #c5a059; }
-        .gold-bg { background-color: #c5a059; }
-        /* Custom scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #05180c; }
-        ::-webkit-scrollbar-thumb { background: #c5a059; border-radius: 4px; }
     </style>
 </head>
-<body class="bg-champagne-light text-emeraldBrand-dark antialiased min-h-screen flex flex-col selection:bg-champagne-gold selection:text-white">
+<body class="bg-champagne-light text-emeraldBrand-dark antialiased min-h-screen flex flex-col">
 
     <!-- Top Announcement Bar -->
     <div class="bg-emeraldBrand-dark text-champagne text-xs py-2 px-4 text-center tracking-widest flex flex-wrap justify-center items-center gap-4 border-b border-champagne-gold/20">
         <span>✨ FREE EXPRESS SHIPPING ON ORDERS ₹999+ ✨</span>
-        <span class="hidden md:inline">|</span>
-        <span>WhatsApp Support: <a href="https://wa.me/919054528514" target="_blank" class="underline hover:text-champagne-gold">+91 90545-28514</a></span>
-        <span class="hidden md:inline">|</span>
-        <span>Instagram: <a href="https://www.instagram.com/eelegant.gems1/" target="_blank" class="underline hover:text-champagne-gold">@eelegant.gems1</a></span>
+        <span>| WhatsApp: <a href="https://wa.me/919054528514" target="_blank" class="underline">+91 90545-28514</a></span>
+        <span>| Instagram: <a href="https://www.instagram.com/eelegant.gems1/" target="_blank" class="underline">@eelegant.gems1</a></span>
     </div>
 
     <!-- Header / Navbar -->
     <header class="sticky top-0 z-40 bg-emeraldBrand/95 backdrop-blur-md border-b border-champagne-gold/30 text-champagne">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Mobile Menu Button -->
-            <button onclick="toggleMobileMenu()" class="md:hidden text-champagne hover:text-champagne-gold focus:outline-none">
-                <i class="fa-solid fa-bars text-xl"></i>
+            <button onclick="toggleMobileMenu()" class="md:hidden text-champagne text-xl">
+                <i class="fa-solid fa-bars"></i>
             </button>
 
-            <!-- Brand Logo -->
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-full border border-champagne-gold flex items-center justify-center bg-emeraldBrand-dark text-champagne-gold font-serif text-lg font-bold shadow-md group-hover:scale-105 transition-transform">
-                    EG
-                </div>
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full border border-champagne-gold flex items-center justify-center bg-emeraldBrand-dark text-champagne-gold font-serif text-lg font-bold">EG</div>
                 <div class="flex flex-col">
-                    <span class="font-serif text-xl sm:text-2xl tracking-widest text-champagne group-hover:text-champagne-gold transition-colors">ELEGANT GEMS</span>
+                    <span class="font-serif text-xl sm:text-2xl tracking-widest text-champagne">ELEGANT GEMS</span>
                     <span class="text-[9px] tracking-[0.25em] text-champagne-gold/80 uppercase">Shine With Elegance</span>
                 </div>
             </a>
 
-            <!-- Desktop Nav Links -->
             <nav class="hidden md:flex items-center space-x-8 text-sm tracking-wider">
-                <a href="#" onclick="filterCategory('all')" class="hover:text-champagne-gold transition-colors pb-1 border-b-2 border-transparent hover:border-champagne-gold">All Collection</a>
-                <a href="#" onclick="filterCategory('Rings')" class="hover:text-champagne-gold transition-colors pb-1 border-b-2 border-transparent hover:border-champagne-gold">Rings</a>
-                <a href="#" onclick="filterCategory('Necklaces & Sets')" class="hover:text-champagne-gold transition-colors pb-1 border-b-2 border-transparent hover:border-champagne-gold">Necklaces</a>
-                <a href="#" onclick="filterCategory('Earrings & Jhumkas')" class="hover:text-champagne-gold transition-colors pb-1 border-b-2 border-transparent hover:border-champagne-gold">Earrings</a>
-                <a href="#" onclick="filterCategory('Bangles & Bracelets')" class="hover:text-champagne-gold transition-colors pb-1 border-b-2 border-transparent hover:border-champagne-gold">Bracelets</a>
-                <a href="#" onclick="filterCategory('Bridal / Festive Sets')" class="hover:text-champagne-gold transition-colors pb-1 border-b-2 border-transparent hover:border-champagne-gold">Bridal Sets</a>
+                <a href="#" onclick="filterCategory('all')" class="hover:text-champagne-gold">All Collection</a>
+                <a href="#" onclick="filterCategory('Rings')" class="hover:text-champagne-gold">Rings</a>
+                <a href="#" onclick="filterCategory('Necklaces & Sets')" class="hover:text-champagne-gold">Necklaces</a>
+                <a href="#" onclick="filterCategory('Earrings & Jhumkas')" class="hover:text-champagne-gold">Earrings</a>
+                <a href="#" onclick="filterCategory('Bangles & Bracelets')" class="hover:text-champagne-gold">Bracelets</a>
             </nav>
 
-            <!-- Right Actions (Search, Account, Cart, Admin) -->
-            <div class="flex items-center space-x-4 sm:space-x-5">
-                <button onclick="toggleSearchModal()" class="hover:text-champagne-gold transition-colors text-lg" title="Search Jewellery">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
-                <button onclick="openAuthModal()" class="hover:text-champagne-gold transition-colors text-lg relative" title="Account / Login">
-                    <i class="fa-regular fa-user"></i>
-                    <span id="authBadge" class="absolute -top-1 -right-1 w-2 h-2 bg-champagne-gold rounded-full hidden"></span>
-                </button>
-                <button onclick="toggleCartDrawer()" class="hover:text-champagne-gold transition-colors text-lg relative" title="Shopping Bag">
+            <div class="flex items-center space-x-4">
+                <button onclick="toggleSearchModal()" class="hover:text-champagne-gold text-lg"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button onclick="openAuthModal()" class="hover:text-champagne-gold text-lg"><i class="fa-regular fa-user"></i></button>
+                <button onclick="toggleCartDrawer()" class="hover:text-champagne-gold text-lg relative">
                     <i class="fa-solid fa-bag-shopping"></i>
-                    <span id="cartCount" class="absolute -top-2 -right-2 bg-champagne-gold text-emeraldBrand-dark text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center shadow">0</span>
+                    <span id="cartCount" class="absolute -top-2 -right-2 bg-champagne-gold text-emeraldBrand-dark text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
                 </button>
-                <!-- Admin / Catalog Manager Button -->
-                <button onclick="openAdminModal()" class="bg-champagne-gold/20 hover:bg-champagne-gold/30 text-champagne-gold border border-champagne-gold/50 px-3 py-1.5 rounded text-xs font-semibold tracking-wider transition-all flex items-center gap-1.5" title="Manage Catalog & Settings">
-                    <i class="fa-solid fa-gear"></i> <span class="hidden lg:inline">+ Add Product</span>
+                <button onclick="openAdminModal()" class="bg-champagne-gold/20 hover:bg-champagne-gold/30 text-champagne-gold border border-champagne-gold/50 px-3 py-1.5 rounded text-xs font-semibold flex items-center gap-1.5">
+                    <i class="fa-solid fa-gear"></i> <span>+ Add Product</span>
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- Mobile Navigation Drawer -->
-    <div id="mobileMenu" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden transition-opacity">
-        <div class="absolute top-0 left-0 bottom-0 w-80 bg-emeraldBrand-dark text-champagne p-6 flex flex-col justify-between shadow-2xl">
-            <div>
-                <div class="flex items-center justify-between pb-6 border-b border-champagne-gold/20">
-                    <div class="flex items-center gap-3">
-                        <div class="w-8 h-8 rounded-full border border-champagne-gold flex items-center justify-center text-champagne-gold font-serif text-sm font-bold">EG</div>
-                        <span class="font-serif text-lg tracking-widest">ELEGANT GEMS</span>
-                    </div>
-                    <button onclick="toggleMobileMenu()" class="text-champagne hover:text-champagne-gold text-xl">
-                        <i class="fa-solid fa-xmark"></i>
-                    </button>
-                </div>
-                <div class="mt-6 flex flex-col space-y-4 font-medium text-sm">
-                    <a href="#" onclick="filterCategory('all'); toggleMobileMenu();" class="hover:text-champagne-gold py-2 border-b border-champagne-gold/10">All Collection</a>
-                    <a href="#" onclick="filterCategory('Rings'); toggleMobileMenu();" class="hover:text-champagne-gold py-2 border-b border-champagne-gold/10">Rings</a>
-                    <a href="#" onclick="filterCategory('Necklaces & Sets'); toggleMobileMenu();" class="hover:text-champagne-gold py-2 border-b border-champagne-gold/10">Necklaces & Sets</a>
-                    <a href="#" onclick="filterCategory('Earrings & Jhumkas'); toggleMobileMenu();" class="hover:text-champagne-gold py-2 border-b border-champagne-gold/10">Earrings & Jhumkas</a>
-                    <a href="#" onclick="filterCategory('Bangles & Bracelets'); toggleMobileMenu();" class="hover:text-champagne-gold py-2 border-b border-champagne-gold/10">Bangles & Bracelets</a>
-                    <a href="#" onclick="filterCategory('Bridal / Festive Sets'); toggleMobileMenu();" class="hover:text-champagne-gold py-2 border-b border-champagne-gold/10">Bridal / Festive Sets</a>
-                </div>
-            </div>
-            <div class="pt-6 border-t border-champagne-gold/20 text-xs text-champagne/70 space-y-2">
-                <p><i class="fa-brands fa-whatsapp text-champagne-gold mr-2"></i> +91 90545-28514</p>
-                <p><i class="fa-brands fa-instagram text-champagne-gold mr-2"></i> @eelegant.gems1</p>
-                <button onclick="toggleMobileMenu(); openAdminModal();" class="w-full mt-4 bg-champagne-gold text-emeraldBrand-dark py-2.5 rounded font-bold text-center tracking-wider">
-                    + Add Product / Manage Store
-                </button>
-            </div>
+    <!-- Search Bar Modal -->
+    <div id="searchModal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-start justify-center pt-20 px-4">
+        <div class="bg-white rounded-xl max-w-xl w-full p-6 shadow-2xl relative">
+            <button onclick="toggleSearchModal()" class="absolute top-4 right-4 text-gray-500 hover:text-black text-lg"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="font-serif text-xl font-bold text-emeraldBrand mb-3">Search Jewellery</h3>
+            <input type="text" id="searchInput" oninput="handleSearch(event)" placeholder="Search by name or finish (e.g. Kundan, Ring)..." class="w-full border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-emeraldBrand">
+            <div id="searchResults" class="mt-4 max-h-60 overflow-y-auto space-y-2"></div>
         </div>
     </div>
 
-    <!-- Hero Banner -->
-    <section class="relative bg-emeraldBrand text-champagne py-16 lg:py-24 overflow-hidden border-b border-champagne-gold/20">
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#c5a059_1px,transparent_1px)] [background-size:24px_24px]"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <div class="inline-block mb-4 px-4 py-1.5 rounded-full border border-champagne-gold/40 bg-emeraldBrand-dark/60 text-champagne-gold text-xs tracking-[0.2em] uppercase">
-                ✨ Premium Fashion & Artificial Jewellery
-            </div>
-            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-wide mb-6">
-                Shine With <span class="gold-gradient-text italic">Elegance</span>
-            </h1>
-            <p class="max-w-2xl mx-auto text-base sm:text-lg text-champagne/80 font-light mb-8 leading-relaxed">
-                Discover exquisite anti-tarnish, American Diamond, Kundan, and festive artificial jewellery curated to elevate every celebration.
-            </p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="#shop-section" class="bg-champagne text-emeraldBrand-dark font-semibold px-8 py-3.5 rounded shadow-lg hover:bg-champagne-gold hover:text-white transition-all tracking-wider text-sm">
-                    Explore Collection
-                </a>
-                <button onclick="openAdminModal()" class="border border-champagne-gold text-champagne font-semibold px-8 py-3.5 rounded hover:bg-champagne-gold/20 transition-all tracking-wider text-sm flex items-center gap-2">
-                    <i class="fa-solid fa-plus text-champagne-gold"></i> Add New Product
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Value Propositions -->
-    <section class="bg-emeraldBrand-dark text-champagne py-8 border-b border-champagne-gold/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div class="flex flex-col items-center p-3">
-                <i class="fa-solid fa-gem text-champagne-gold text-2xl mb-2"></i>
-                <h4 class="font-semibold text-sm">Skin Safe & Anti-Tarnish</h4>
-                <p class="text-xs text-champagne/60 mt-1">Long-lasting radiant finish</p>
-            </div>
-            <div class="flex flex-col items-center p-3">
-                <i class="fa-solid fa-truck-fast text-champagne-gold text-2xl mb-2"></i>
-                <h4 class="font-semibold text-sm">Pan-India Shipping</h4>
-                <p class="text-xs text-champagne/60 mt-1">Free delivery on ₹999+</p>
-            </div>
-            <div class="flex flex-col items-center p-3">
-                <i class="fa-solid fa-shield-halved text-champagne-gold text-2xl mb-2"></i>
-                <h4 class="font-semibold text-sm">Secure UPI & COD</h4>
-                <p class="text-xs text-champagne/60 mt-1">Fast & safe payments</p>
-            </div>
-            <div class="flex flex-col items-center p-3">
-                <i class="fa-solid fa-headset text-champagne-gold text-2xl mb-2"></i>
-                <h4 class="font-semibold text-sm">WhatsApp Concierge</h4>
-                <p class="text-xs text-champagne/60 mt-1">+91 90545-28514</p>
-            </div>
-        </div>
-    </section>
-
     <!-- Main Shop Section -->
     <main id="shop-section" class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
-        <!-- Section Header & Filter Tabs -->
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b border-champagne-dark/30 gap-4">
             <div>
                 <span class="text-xs font-bold uppercase tracking-[0.2em] text-emeraldBrand/70">Curated Catalog</span>
                 <h2 id="currentCategoryTitle" class="font-serif text-3xl sm:text-4xl font-bold text-emeraldBrand mt-1">All Collections</h2>
             </div>
-            <div class="flex flex-wrap items-center gap-3">
-                <span class="text-xs font-semibold text-emeraldBrand/80">Sort By:</span>
-                <select id="sortSelect" onchange="sortProducts()" class="bg-champagne border border-champagne-dark/50 text-xs text-emeraldBrand-dark px-3 py-2 rounded focus:outline-none focus:border-emeraldBrand">
-                    <option value="featured">Featured / Default</option>
-                    <option value="low-high">Price: Low to High</option>
-                    <option value="high-low">Price: High to Low</option>
-                    <option value="name">Name (A-Z)</option>
-                </select>
-            </div>
         </div>
 
-        <!-- Product Grid Container -->
-        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            <!-- Dynamic Products will load here -->
-        </div>
+        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"></div>
 
-        <!-- Empty Catalog State (if 0 products) -->
-        <div id="emptyCatalogState" class="hidden text-center py-20 px-4 bg-white rounded-xl border border-champagne-dark/30 shadow-sm max-w-2xl mx-auto my-12">
-            <div class="w-16 h-16 bg-champagne rounded-full flex items-center justify-center mx-auto mb-4 text-emeraldBrand text-2xl">
-                <i class="fa-solid fa-gem"></i>
-            </div>
+        <div id="emptyCatalogState" class="hidden text-center py-20 px-4 bg-white rounded-xl border shadow-sm max-w-2xl mx-auto my-12">
+            <div class="w-16 h-16 bg-champagne rounded-full flex items-center justify-center mx-auto mb-4 text-emeraldBrand text-2xl"><i class="fa-solid fa-gem"></i></div>
             <h3 class="font-serif text-2xl font-bold text-emeraldBrand mb-2">Your Vault Awaits Your Collection</h3>
-            <p class="text-sm text-gray-600 mb-6">No artificial jewellery items added yet. Click below to add your first product with real photos, price, and finish details.</p>
-            <button onclick="openAdminModal()" class="bg-emeraldBrand text-champagne font-semibold px-6 py-3 rounded text-sm hover:bg-emeraldBrand-light transition-all shadow-md">
+            <p class="text-sm text-gray-600 mb-6">No artificial jewellery items added yet. Click below to add your first product.</p>
+            <button onclick="openAdminModal()" class="bg-emeraldBrand text-champagne font-semibold px-6 py-3 rounded text-sm shadow-md">
                 <i class="fa-solid fa-plus text-champagne-gold mr-2"></i> Add Your First Jewelry Product
             </button>
         </div>
     </main>
 
-    <!-- Floating WhatsApp Concierge Button -->
-    <a href="https://wa.me/919054528514?text=Hello%20Elegant%20Gems,%20I%20want%20to%20inquire%20about%20artificial%20jewellery." target="_blank" class="fixed bottom-6 left-6 z-40 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform text-2xl" title="Chat on WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
+    <!-- Admin & Catalog Manager Modal -->
+    <div id="adminModal" class="fixed inset-0 z-50 overflow-y-auto hidden flex items-center justify-center p-4 bg-black/70 backdrop-blur-md">
+        <div class="bg-white rounded-2xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeAdminModal()" class="absolute top-4 right-4 text-gray-500 hover:text-black text-lg"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div class="flex items-center justify-between border-b pb-4 mb-6">
+                <div>
+                    <h3 class="font-serif text-2xl font-bold text-emeraldBrand">Atelier Catalog & Store Manager</h3>
+                    <p class="text-xs text-gray-500">Add artificial jewellery items and manage store settings.</p>
+                </div>
+                <div class="flex gap-2">
+                    <button onclick="switchAdminTab('products')" id="tabBtnProducts" class="px-3 py-1.5 rounded text-xs font-bold bg-emeraldBrand text-champagne">Products</button>
+                    <button onclick="switchAdminTab('settings')" id="tabBtnSettings" class="px-3 py-1.5 rounded text-xs font-bold bg-gray-100 text-gray-700">Settings</button>
+                </div>
+            </div>
 
-    <!-- Footer -->
-    <footer class="bg-emeraldBrand-dark text-champagne pt-16 pb-12 border-t border-champagne-gold/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-            <div>
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-9 h-9 rounded-full border border-champagne-gold flex items-center justify-center text-champagne-gold font-serif font-bold">EG</div>
-                    <span class="font-serif text-xl tracking-widest">ELEGANT GEMS</span>
+            <!-- Products Tab -->
+            <div id="adminProductsTab" class="space-y-6">
+                <form id="productForm" onsubmit="saveProduct(event)" class="bg-champagne-light p-5 rounded-xl border space-y-4">
+                    <input type="hidden" id="editIndex" value="-1">
+                    <h4 class="font-bold text-sm text-emeraldBrand uppercase"><i class="fa-solid fa-circle-plus text-champagne-gold"></i> <span id="formTitle">Add New Product</span></h4>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                        <div>
+                            <label class="block font-medium text-gray-700 mb-1">Product Name *</label>
+                            <input type="text" id="prodName" required class="w-full border rounded px-3 py-2 bg-white" placeholder="Royal Kundan Set">
+                        </div>
+                        <div>
+                            <label class="block font-medium text-gray-700 mb-1">Category *</label>
+                            <select id="prodCategory" required class="w-full border rounded px-3 py-2 bg-white">
+                                <option value="Rings">Rings</option>
+                                <option value="Necklaces & Sets">Necklaces & Sets</option>
+                                <option value="Earrings & Jhumkas">Earrings & Jhumkas</option>
+                                <option value="Bangles & Bracelets">Bangles & Bracelets</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block font-medium text-gray-700 mb-1">Price (₹) *</label>
+                            <input type="number" id="prodPrice" required class="w-full border rounded px-3 py-2 bg-white" placeholder="1499">
+                        </div>
+                        <div>
+                            <label class="block font-medium text-gray-700 mb-1">Finish / Material *</label>
+                            <input type="text" id="prodFinish" required class="w-full border rounded px-3 py-2 bg-white" placeholder="18K Gold Plated, AD">
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block font-medium text-gray-700 mb-1">Product Image (Upload Photo or Paste URL) *</label>
+                            <div class="flex gap-2">
+                                <input type="file" id="prodImageFile" accept="image/*" onchange="handleImageUpload(event)" class="w-1/2 border rounded px-2 py-1.5 bg-white text-[11px]">
+                                <input type="url" id="prodImgUrl" required class="w-1/2 border rounded px-3 py-2 bg-white" placeholder="https://...">
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="bg-emeraldBrand text-champagne font-bold px-6 py-2.5 rounded text-xs">Save Product</button>
+                </form>
+
+                <div>
+                    <h4 class="font-bold text-sm text-emeraldBrand mb-3">Existing Products (<span id="adminProductCount">0</span>)</h4>
+                    <div id="adminProductList" class="space-y-2 max-h-48 overflow-y-auto"></div>
                 </div>
-                <p class="text-xs text-champagne/70 leading-relaxed mb-4">
-                    Shine With Elegance. Your ultimate destination for premium artificial, anti-tarnish, American Diamond, and festive imitation jewellery.
-                </p>
-                <div class="flex space-x-4 text-lg">
-                    <a href="https://www.instagram.com/eelegant.gems1/" target="_blank" class="text-champagne-gold hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://wa.me/919054528514" target="_blank" class="text-champagne-gold hover:text-white transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
-                </div>
             </div>
-            <div>
-                <h4 class="font-serif text-sm tracking-widest text-champagne-gold uppercase mb-4 font-semibold">Quick Links</h4>
-                <ul class="space-y-2 text-xs text-champagne/80">
-                    <li><a href="#" onclick="filterCategory('all')" class="hover:text-champagne-gold">All Collection</a></li>
-                    <li><a href="#" onclick="filterCategory('Rings')" class="hover:text-champagne-gold">Rings & Bands</a></li>
-                    <li><a href="#" onclick="filterCategory('Necklaces & Sets')" class="hover:text-champagne-gold">Necklaces & Sets</a></li>
-                    <li><a href="#" onclick="filterCategory('Earrings & Jhumkas')" class="hover:text-champagne-gold">Earrings & Jhumkas</a></li>
-                    <li><a href="#" onclick="filterCategory('Bangles & Bracelets')" class="hover:text-champagne-gold">Bangles & Bracelets</a></li>
-                </ul>
+
+            <!-- Settings Tab -->
+            <div id="adminSettingsTab" class="space-y-4 hidden">
+                <form onsubmit="saveStoreSettings(event)" class="bg-champagne-light p-5 rounded-xl border space-y-4 text-xs">
+                    <div>
+                        <label class="block font-medium text-gray-700 mb-1">WhatsApp Number</label>
+                        <input type="text" id="settingWhatsapp" value="9054528514" class="w-full border rounded px-3 py-2 bg-white">
+                    </div>
+                    <div>
+                        <label class="block font-medium text-gray-700 mb-1">UPI ID</label>
+                        <input type="text" id="settingUpi" value="ankitshahi9054-@okhdfcbank" class="w-full border rounded px-3 py-2 bg-white">
+                    </div>
+                    <button type="submit" class="bg-emeraldBrand text-champagne font-bold px-6 py-2.5 rounded">Save Settings</button>
+                </form>
             </div>
-            <div>
-                <h4 class="font-serif text-sm tracking-widest text-champagne-gold uppercase mb-4 font-semibold">Customer Care</h4>
-                <ul class="space-y-2 text-xs text-champagne/80">
-                    <li><a href="#" onclick="openAuthModal()" class="hover:text-champagne-gold">My Account / Orders</a></li>
-                    <li><a href="#" onclick="toggleCartDrawer()" class="hover:text-champagne-gold">Shopping Bag</a></li>
-                    <li><a href="#" onclick="alert('Shipping Policy: Free standard shipping on orders above ₹999. Dispatched within 24-48 hours.')" class="hover:text-champagne-gold">Shipping & Delivery</a></li>
-                    <li><a href="#" onclick="alert('Return Policy: 7-day easy exchange/return for unused items in original packaging.')" class="hover:text-champagne-gold">Returns & Exchange</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-serif text-sm tracking-widest text-champagne-gold uppercase mb-4 font-semibold">Official Contact</h4>
-                <ul class="space-y-3 text-xs text-champagne/80">
-                    <li class="flex items-start gap-2">
+        </div>
+    </div>
+
+    <!-- Script Logic -->
+    <script>
+        let storeData = { whatsapp: "9054528514", upi: "ankitshahi9054-@okhdfcbank", products: [], cart: [] };
+        
+        function loadStore() {
+            const saved = localStorage.getItem('elegant_gems_store_data_v3');
+            if (saved) { try { storeData = JSON.parse(saved); } catch(e){} }
+        }
+        function saveStore() {
+            localStorage.setItem('elegant_gems_store_data_v3', JSON.stringify(storeData));
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadStore();
+            renderProducts();
+        });
+
+        function toggleSearchModal() {
+            document.getElementById('searchModal').classList.toggle('hidden');
+        }
+
+        function handleSearch(e) {
+            const query = e.target.value.toLowerCase();
+            const resultsContainer = document.getElementById('searchResults');
+            resultsContainer.innerHTML = '';
+            if(!query) return;
+            const matches = storeData.products.filter(p => p.name.toLowerCase().includes(query) || p.finish.toLowerCase().includes(query));
+            matches.forEach(m => {
+                const div = document.createElement('div');
+                div.className = "flex items-center gap-3 p-2 bg-gray-50 rounded cursor-pointer hover:bg-gray-100";
+                div.innerHTML = `<img src="${m.image}" class="w-10 h-10 object-cover rounded"><div><p class="text-xs font-bold text-emeraldBrand">${m.name}</p><p class="text-[10px]">₹${m.price}</p></div>`;
+                resultsContainer.appendChild(div);
+            });
+        }
+
+        function openAdminModal() {
+            renderAdminProducts();
+            document.getElementById('adminModal').classList.remove('hidden');
+        }
+        function closeAdminModal() {
+            document.getElementById('adminModal').classList.add('hidden');
+        }
+
+        function switchAdminTab(tab) {
+            if(tab==='products') {
+                document.getElementById('adminProductsTab').classList.remove('hidden');
+                document.getElementById('adminSettingsTab').classList.add('hidden');
+                document.getElementById('tabBtnProducts').className = "px-3 py-1.5 rounded text-xs font-bold bg-emeraldBrand text-champagne";
+                document.getElementById('tabBtnSettings').className = "px-3 py-1.5 rounded text-xs font-bold bg-gray-100 text-gray-700";
+            } else {
+                document.getElementById('adminProductsTab').classList.add('hidden');
+                document.getElementById('adminSettingsTab').classList.remove('hidden');
+                document.getElementById('tabBtnProducts').className = "px-3 py-1.5 rounded text-xs font-bold bg-gray-100 text-gray-700";
+                document.getElementById('tabBtnSettings').className = "px-3 py-1.5 rounded text-xs font-bold bg-emeraldBrand text-champagne";
+            }
+        }
+
+        function handleImageUpload(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(uploadEvent) {
+                    document.getElementById('prodImgUrl').value = uploadEvent.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function saveProduct(e) {
+            e.preventDefault();
+            const product = {
+                id: 'prod_' + Date.now(),
+                name: document.getElementById('prodName').value,
+                category: document.getElementById('prodCategory').value,
+                price: parseFloat(document.getElementById('prodPrice').value),
+                finish: document.getElementById('prodFinish').value,
+                image: document.getElementById('prodImgUrl').value
+            };
+            storeData.products.unshift(product);
+            saveStore();
+            renderProducts();
+            renderAdminProducts();
+            document.getElementById('productForm').reset();
+            alert('Product added successfully!');
+        }
+
+        function renderProducts() {
+            const grid = document.getElementById('productGrid');
+            const emptyState = document.getElementById('emptyCatalogState');
+            grid.innerHTML = '';
+            if (storeData.products.length === 0) {
+                emptyState.classList.remove('hidden');
+                grid.classList.add('hidden');
+                return;
+            }
+            emptyState.classList.add('hidden');
+            grid.classList.remove('hidden');
+            storeData.products.forEach(p => {
+                const card = document.createElement('div');
+                card.className = "bg-white rounded-xl overflow-hidden shadow-sm border p-4";
+                card.innerHTML = `<img src="${p.image}" class="w-full aspect-square object-cover rounded-lg mb-3"><h3 class="font-bold text-emeraldBrand">${p.name}</h3><p class="text-xs text-gray-500">${p.finish}</p><p class="font-bold mt-2 text-emeraldBrand">₹${p.price}</p>`;
+                grid.appendChild(card);
+            });
+        }
+
+        function renderAdminProducts() {
+            const list = document.getElementById('adminProductList');
+            document.getElementById('adminProductCount').innerText = storeData.products.length;
+            list.innerHTML = '';
+            storeData.products.forEach((p, idx) => {
+                const div = document.createElement('div');
+                div.className = "flex items-center justify-between p-2 bg-gray-50 rounded text-xs";
+                div.innerHTML = `<span>${p.name} (₹${p.price})</span><button onclick="deleteProduct(${idx})" class="text-red-500 font-bold">Delete</button>`;
+                list.appendChild(div);
+            });
+        }
+
+        function deleteProduct(idx) {
+            storeData.products.splice(idx, 1);
+            saveStore();
+            renderProducts();
+            renderAdminProducts();
+        }
+
+        function saveStoreSettings(e) {
+            e.preventDefault();
+            storeData.whatsapp = document.getElementById('settingWhatsapp').value;
+            storeData.upi = document.getElementById('settingUpi').value;
+            saveStore();
+            alert('Settings saved!');
+            closeAdminModal();
+        }
+    </script>
+</body>
+</html>
